@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { ApolloProvider } from '@apollo/react-hooks';
+import ApolloClient from 'apollo-boost';
+import Ships from './components/Ships/Ships';
+import SideBar from './components/SideBar/SideBar';
+import { AppContainer } from './styled';
+
+const client = new ApolloClient({
+  uri: 'https://swapi-graphql.netlify.com/.netlify/functions/index',
+});
+
 
 function App() {
+  const [sideBarOpen, setSidebarOpen] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <AppContainer>
+          <SideBar open={sideBarOpen} setOpen={setSidebarOpen} /> 
+          <Ships sideBarOpen={sideBarOpen}/>
+        </AppContainer>
+      </div>
+    </ApolloProvider>
   );
 }
 

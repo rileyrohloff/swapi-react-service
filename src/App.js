@@ -4,6 +4,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 import Ships from './components/Ships/Ships';
 import SideBar from './components/SideBar/SideBar';
+import Cards from './components/Cards/Card';
 import { AppContainer } from './styled';
 
 const client = new ApolloClient({
@@ -19,7 +20,8 @@ function App() {
       <div className="App">
         <AppContainer>
           <SideBar open={sideBarOpen} setOpen={setSidebarOpen} /> 
-          <Ships sideBarOpen={sideBarOpen}/>
+          {/* <Ships sideBarOpen={sideBarOpen}/> */}
+          <Cards sidebar={sideBarOpen}/>
         </AppContainer>
       </div>
     </ApolloProvider>

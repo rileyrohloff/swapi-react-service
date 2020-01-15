@@ -23,4 +23,4 @@ const Ships = ({ sideBarOpen }) => {
     return <ShipsWrapper sideBarOpen={sideBarOpen}>{cards}</ShipsWrapper>
   }
 
-  export default Ships; 
+  export default Ships;

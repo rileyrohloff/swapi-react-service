@@ -8,6 +8,7 @@ const GET_ALL_FILMS = gql`
             title
             episodeID
             releaseDate
+            id
         }
         }
     }

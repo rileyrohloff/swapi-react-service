@@ -12,15 +12,15 @@ const Cards = ({sidebar}) => {
       
       return <p>Error... </p>
     }
-
-    const filmData = data.allFilms.films.map(({title, episodeID, releaseDate}) => {
+    data.allFilms.films.sort((a, b) => a.episodeID - b.episodeID);
+    const filmData = data.allFilms.films.map(({title, episodeID}) => {
        return(
         <CardsContainer key={episodeID}>
-            <p>{title}</p>
-       <p>{episodeID}</p>
+          <p>{title}</p>
+          <p>{episodeID}</p>
         </CardsContainer>
        )
-    })
+    });
     return <CardWrapper sideBarOpen={sidebar}>{filmData}</CardWrapper>
 };
 

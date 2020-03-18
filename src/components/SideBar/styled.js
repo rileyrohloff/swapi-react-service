@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Bar = styled.div`
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     height: 100%;
     width: 250px;
     ${({ open }) =>  !open && `
@@ -17,8 +17,6 @@ export const Bar = styled.div`
 `
 export const SideBarButton = styled.button`
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 25px;
     width: 25px;
     background-color: white;
@@ -26,4 +24,11 @@ export const SideBarButton = styled.button`
     user-select: none;
     font-weight: bold;
 
+`
+
+export const MainNav = styled.nav`
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 `

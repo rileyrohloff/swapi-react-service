@@ -5,3 +5,8 @@ export const AppContainer = styled.div`
     
 
 `
+
+export const SideBarWrapper = styled.div`
+
+
+`

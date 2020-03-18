@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavTitle, NavContainer } from './styled';
+import { NavTitle } from './styled';
 
 const NavItems = () => {
     const navItems = ['Ships', 'Movies', 'Races'];
@@ -8,10 +8,8 @@ const NavItems = () => {
         <NavTitle>{i}</NavTitle>
         )
     })
-    return (
-        data
-    )
+return data
 };
 
 
-export default NavItems
+export default NavItems;

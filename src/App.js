@@ -5,7 +5,7 @@ import ApolloClient from 'apollo-boost';
 import Ships from './components/Ships/Ships';
 import SideBar from './components/SideBar/SideBar';
 import Cards from './components/Cards/Card';
-import { AppContainer } from './styled';
+import { AppContainer, SideBarWrapper } from './styled';
 
 const client = new ApolloClient({
   uri: 'https://swapi-graphql.netlify.com/.netlify/functions/index',
@@ -19,8 +19,7 @@ function App() {
     <ApolloProvider client={client}>
       <div className="App">
         <AppContainer>
-          <SideBar open={sideBarOpen} setOpen={setSidebarOpen} /> 
-          {/* <Ships sideBarOpen={sideBarOpen}/> */}
+            <SideBar className="side-bar-content" open={sideBarOpen} setOpen={setSidebarOpen} />
           <Cards sidebar={sideBarOpen}/>
         </AppContainer>
       </div>

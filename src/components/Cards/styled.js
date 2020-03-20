@@ -15,6 +15,7 @@ export const CardsContainer = styled.div`
     padding: 10px;
     margin: 10px;
     :hover {
-        background-color: #FF5733;
+        background-color: #C60606;
+        cursor: pointer;
     }
     `

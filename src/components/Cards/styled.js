@@ -11,11 +11,11 @@ export const CardWrapper = styled.div`
 `
 export const CardsContainer = styled.div`
     background-color: tomato;
-    border-radius: 5px; 
+    border-radius: 10px; 
     padding: 10px;
     margin: 10px;
     :hover {
         background-color: #C60606;
         cursor: pointer;
     }
-    `
+`

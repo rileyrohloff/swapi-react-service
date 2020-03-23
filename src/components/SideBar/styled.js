@@ -13,6 +13,7 @@ export const Bar = styled.div`
     position: fixed;
     transition: width .2s ease; 
     padding: 10px;
+    border-top-right-radius: 10px;
     
 `
 export const SideBarButton = styled.button`

@@ -1,6 +1,12 @@
-import React from 'react';
 import styled from 'styled-components';
 
  export const InfoContainer = styled.div`
-    border-style: dotted;
+ background-color: tomato;
+ border-radius: 10px; 
+ padding: 10px;
+ margin: 10px;
+ :hover {
+     background-color: #C60606;
+     cursor: pointer;
+ }
  `

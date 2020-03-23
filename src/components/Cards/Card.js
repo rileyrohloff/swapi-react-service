@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardWrapper, CardsContainer } from './styled';
+import { CardWrapper } from './styled';
 import CardData from '../CardData/CardData';
 import GET_ALL_FILMS from '../../apollo/queries/getMovies';
 import { useQuery } from '@apollo/react-hooks';
@@ -16,15 +16,14 @@ const Cards = ({sidebar}) => {
     data.allFilms.films.sort((a, b) => a.episodeID - b.episodeID);
     const filmData = data.allFilms.films.map(({title, episodeID, releaseDate, id}) => {
        return(
-        <CardsContainer key={episodeID}>
           <CardData
           episodeID={episodeID}
           title={title}
           releaseDate={releaseDate}
           id={id}
           data-testid={`star-wars-${episodeID}`}
+          key={episodeID}
           />
-        </CardsContainer>
        )
     });
     return <CardWrapper sideBarOpen={sidebar}>{filmData}</CardWrapper>

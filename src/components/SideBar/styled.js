@@ -26,10 +26,17 @@ export const SideBarButton = styled.button`
     font-weight: bold;
 
 `
-
-export const MainNav = styled.nav`
-    height: 100vh;
+export const MainNavItemsContainer = styled.nav`
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-`
+    justify-content: space-around;
+    border: dotted;
+    height: 300px;
+    width: 200px;
+`;
+
+export const MainNav = styled.div`
+    height: 100vh;
+    display: flex;
+    padding-top: 50px;
+`;

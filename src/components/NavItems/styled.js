@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 
-export const NavTitle = styled.p`
+export const NavItem = styled.li`
     display: flex;
-    justify-content: flex-start;
-    font-weight: bold;
+    justify-content: space-evenly;
     color: red;
     border: dotted;
-    border-color: black;
+    border-color: red;
     padding: 10px;
 `
-

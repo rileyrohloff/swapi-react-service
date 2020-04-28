@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bar, SideBarButton, MainNav } from './styled';
+import { Bar, SideBarButton, MainNav, MainNavItemsContainer } from './styled';
 import NavItems from './../NavItems/NavItem';
 
 const SideBar = ({open, setOpen}) => {
@@ -7,7 +7,9 @@ const SideBar = ({open, setOpen}) => {
         return (
             <Bar open={open}>
                 <MainNav>
-                    <NavItems/>
+                    <MainNavItemsContainer>
+                        <NavItems/>
+                    </MainNavItemsContainer>
                 </MainNav>
                 <SideBarButton onClick={() => setOpen(!open)}>
                     {open ? '<' : '>'}

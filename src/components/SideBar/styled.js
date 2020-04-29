@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const Bar = styled.div`
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     height: 100%;
     width: 250px;
     ${({ open }) =>  !open && `
@@ -18,6 +19,7 @@ export const Bar = styled.div`
 `
 export const SideBarButton = styled.button`
     display: flex;
+    align-self: flex-end;
     height: 25px;
     width: 25px;
     background-color: white;
@@ -32,11 +34,12 @@ export const MainNavItemsContainer = styled.nav`
     justify-content: space-around;
     border: dotted;
     height: 300px;
-    width: 200px;
+    width: 100%;
 `;
 
 export const MainNav = styled.div`
     height: 100vh;
     display: flex;
     padding-top: 50px;
+    width: 100%;
 `;

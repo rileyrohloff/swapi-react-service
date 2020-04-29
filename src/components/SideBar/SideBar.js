@@ -1,32 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Bar, SideBarButton, MainNav, MainNavItemsContainer } from './styled';
 import NavItems from './../NavItems/NavItem';
 
-const SideBar = ({open, setOpen}) => {
-    if (open) {
-        return (
-            <Bar open={open}>
-                <MainNav>
-                    <MainNavItemsContainer>
-                        <NavItems/>
-                    </MainNavItemsContainer>
-                </MainNav>
-                <SideBarButton onClick={() => setOpen(!open)}>
-                    {open ? '<' : '>'}
-                </SideBarButton>
-            </Bar>
-        )
-    } else {
-        return (
-            <Bar open={open}>
-                <div></div>
-                <SideBarButton onClick={() => setOpen(!open)}>
-                    {open ? '<' : '>'}
-                </SideBarButton>
-            </Bar>
-        )
-    }
-};
 
+const SideBar = ({open, setOpen}) => {
+
+    const [ delay, setDelay ] = useState(true);
+
+    const handleClick = () => {
+        setOpen(!open)
+
+        if (open) {
+            setDelay(false)
+
+            setTimeout(() => setDelay(true), 150)
+        }
+    };
+
+    return(
+        <Bar open={open}>
+            <SideBarButton onClick={() => handleClick()}>
+                        {open ? '<' : '>'}
+        </SideBarButton>
+            {
+                (open || !delay) && (
+                    
+                    <MainNav>
+                        <MainNavItemsContainer>
+                            <NavItems/>
+                        </MainNavItemsContainer>
+                    </MainNav>
+                )
+        }
+        </Bar>
+        )
+};
 
 export default SideBar; 
